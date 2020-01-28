@@ -5,15 +5,18 @@ import Popper from 'popper.js';
 import 'bootstrap/dist/js/bootstrap.bundle.min';
 import Cards from './Cards';
 
-
+//Cards Parent
 export default function CardsContainer() {
     return (
+        //maps each array item using the card component design
         <div className="container d-flex flex-wrap">
             {Products.map(p => <Cards key={p.id} {...p} />)}
         </div>
     );
 }
 
+
+//test array until db is working
 const Products = [
     {
         id: 1,
