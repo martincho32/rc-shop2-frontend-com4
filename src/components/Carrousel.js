@@ -4,9 +4,7 @@ import car2 from '../images/car2.jpg';
 import car3 from '../images/car3.jpg';
 
 class Carrousel extends React.Component {
-    /* constructor(props) {
-        super(props);
-    } */
+    
     render() {
         return (
                 <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
