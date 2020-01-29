@@ -6,7 +6,7 @@ function App() {
   return (
     <div>
       <img src={logo} className="image" alt="sample-resource" />
-      <h1 style={{ display: "inline" }}>Hello World!</h1>
+      <h1 style={{ display: "inline" }}>THE PAGE DE TEAM'S ALDO</h1>
     </div>
   );
 }
