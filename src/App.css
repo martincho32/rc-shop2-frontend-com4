@@ -5,11 +5,13 @@
 .products-cards {
   width: 250px!important;
 }
+
 .shop-btn {
   visibility: hidden;
   opacity: 0;
   transition: visibility 0s linear 300ms, opacity 300ms;
 }
+
 .card:hover .shop-btn{
   visibility: visible;
   opacity: 1;

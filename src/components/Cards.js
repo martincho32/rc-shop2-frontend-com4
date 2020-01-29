@@ -1,11 +1,7 @@
 import React from 'react';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import 'bootstrap/dist/js/bootstrap.bundle.min';
-
 
 export default function Cards(props) {
     return (
-        
         <div className="card products-cards m-2 shadow">
             <img src={props.img} className="card-img-top shadow-sm" alt={props.title}></img>
             <div className="card-body">
@@ -23,4 +19,3 @@ export default function Cards(props) {
         </div>
     );
 }
-

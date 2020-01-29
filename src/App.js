@@ -5,9 +5,7 @@ import CardsContainer from './components/CardsContainer';
 function App() {
   return (
     <div>
-
       <CardsContainer/>
-    
     </div> 
   );
 }
