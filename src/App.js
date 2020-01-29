@@ -1,11 +1,14 @@
 import React from 'react';
-import logo from './images/react-logo.svg';
-import Navbar from './Nabvar';
 import './App.css';
+import CardsContainer from './components/CardsContainer';
+import Navbar from './components/Nabvar';
 
 function App() {
   return (
-    <Navbar/>
+    <div>
+      <Navbar/>
+      <CardsContainer/>
+    </div> 
   );
 }
 
