@@ -33,9 +33,6 @@ class Carrousel extends React.Component {
                             <span class="sr-only">Next</span>
                         </a>
                 </div>
-                        );
-                        }
+                        );}
                     }
-                    
-                    
 export default Carrousel;
