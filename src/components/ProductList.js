@@ -1,13 +1,16 @@
 import React from 'react';
+import Carrousel from './Carrousel';
 import Cards from './Cards';
 
 //Cards Parent
 export default function CardsContainer() {
     return (
-        //maps each array item using the card component design
-        <div className="container d-flex flex-wrap">
-            {Products.map(p => <Cards key={p.id + "-" + p.title} {...p} />)}
-        </div>
+        <>
+            <Carrousel />
+            <div className="container d-flex flex-wrap">
+                {Products.map(p => <Cards key={p.id + "-" + p.title} {...p} />)}
+            </div>
+        </>
     );
 }
 
