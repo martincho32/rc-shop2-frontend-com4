@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css';
-import HomePage from './pages/Home-page';
+import HomePage from './pages/HomePage';
 import Navbar from './components/Nabvar';
 import {
   Switch,
