@@ -1,94 +1,33 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import Axios from 'axios';
 import Cards from './Cards';
 
-//Cards Parent
-export default function CardsContainer() {
+export default function ProductList() {
+    const [dbProducts, setDbProducts] = useState();
+
+    //Hook version of componentDidMount()
+    useEffect(async () => {
+        try {
+            const res = await Axios.get('/api/products');
+            setDbProducts(res.data)
+        } catch (e) {
+            console.error(e);
+        }
+    }, []);
+
+    const products = dbProducts;
+    let productsWithMap = [];
+
+    //checks if its not null or undefined
+    if (products) {
+        productsWithMap = products.map(p => <Cards key={p.id} {...p} />)
+    }
+
     return (
         <>
             <div className="container d-flex flex-wrap">
-                {Products.map(p => <Cards key={p.id + "-" + p.title} {...p} />)}
+                {productsWithMap}
             </div>
         </>
     );
 }
-
-//test array until db is working
-const Products = [
-    {
-        id: 1,
-        title: "iPhone",
-        description: "1920x180 - '10 - Octacore - Gorilla Glass, 40MP",
-        img: "https://http2.mlstatic.com/D_NQ_NP_803543-MLA32324233222_092019-W.webp",
-        price: "10000",
-        sale: {
-            hasDiscount: true,
-            discount: "15%"
-        }
-    },
-    {
-        id: 2,
-        title: "S10",
-        description: "1920x180 - '10 - Octacore - Gorilla Glass, 40MP",
-        img: "https://http2.mlstatic.com/D_NQ_NP_803543-MLA32324233222_092019-W.webp",
-        price: "10000",
-        sale: {
-            hasDiscount: true,
-            discount: "20%"
-        }
-    },
-    {
-        id: 3,
-        title: "S10",
-        description: "1920x180 - '10 - Octacore - Gorilla Glass, 40MP",
-        img: "https://http2.mlstatic.com/D_NQ_NP_803543-MLA32324233222_092019-W.webp",
-        price: "10000",
-        sale: {
-            hasDiscount: false,
-            discount: "20%"
-        }
-    },
-    {
-        id: 4,
-        title: "S10",
-        description: "1920x180 - '10 - Octacore - Gorilla Glass, 40MP",
-        img: "https://http2.mlstatic.com/D_NQ_NP_803543-MLA32324233222_092019-W.webp",
-        price: "10000",
-        sale: {
-            hasDiscount: true,
-            discount: "20%"
-        }
-    },
-    {
-        id: 5,
-        title: "S10",
-        description: "1920x180 - '10 - Octacore - Gorilla Glass, 40MP",
-        img: "https://http2.mlstatic.com/D_NQ_NP_803543-MLA32324233222_092019-W.webp",
-        price: "10000",
-        sale: {
-            hasDiscount: false,
-            discount: "20%"
-        }
-    },
-    {
-        id: 6,
-        title: "S10",
-        description: "1920x180 - '10 - Octacore - Gorilla Glass, 40MP",
-        img: "https://http2.mlstatic.com/D_NQ_NP_803543-MLA32324233222_092019-W.webp",
-        price: "10000",
-        sale: {
-            hasDiscount: false,
-            discount: "20%"
-        }
-    },
-    {
-        id: 7,
-        title: "S10",
-        description: "1920x180 - '10 - Octacore - Gorilla Glass, 40MP",
-        img: "https://http2.mlstatic.com/D_NQ_NP_803543-MLA32324233222_092019-W.webp",
-        price: "10000",
-        sale: {
-            hasDiscount: false,
-            discount: "20%"
-        }
-    }
-];
