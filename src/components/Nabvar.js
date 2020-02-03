@@ -1,14 +1,16 @@
 import React from 'react';
 import RollingLogo from '../images/carrito.png';
-
+import { Link } from "react-router-dom";
 
 function Navbar() {
     return (
         <div>
             <div>
                 <nav className="navbar navbar-expand-lg navbar-light bg-warning">
-                    <img src={RollingLogo} width="70" height="70" />
-                    <a class="navbar-brand" href="#">Rolling Shop</a>
+                    <Link to="/">
+                        <img src={RollingLogo} width="70" height="70" />
+                        <a class="navbar-brand" href="#">Rolling Shop</a>
+                    </Link>
                     <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                         <span className="navbar-toggler-icon"></span>
                     </button>
@@ -17,8 +19,7 @@ function Navbar() {
                         <ul className="navbar-nav mr-auto">
                             <li className="nav-item dropdown">
                                 <a className="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    TV, Audio y Video
-                     </a>
+                                    TV, Audio y Video </a>
                                 <div className="dropdown-menu" aria-labelledby="navbarDropdown">
                                     <a className="dropdown-item" href="#">Smart TV</a>
                                     <a className="dropdown-item" href="#">Full HD</a>
@@ -29,8 +30,7 @@ function Navbar() {
                             </li>
                             <li className="nav-item dropdown">
                                 <a className="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    Celulares,Tablets y Notebooks
-                     </a>
+                                    Celulares,Tablets y Notebooks </a>
                                 <div className="dropdown-menu" aria-labelledby="navbarDropdown">
                                     <a className="dropdown-item" href="#">Celulares Liberados</a>
                                     <a className="dropdown-item" href="#">Cargadores Portatiles</a>
@@ -42,8 +42,7 @@ function Navbar() {
                             </li>
                             <li className="nav-item dropdown">
                                 <a className="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    Electrodomesticos y Accesorios
-                     </a>
+                                    Electrodomesticos y Accesorios </a>
                                 <div className="dropdown-menu" aria-labelledby="navbarDropdown">
                                     <a className="dropdown-item" href="#">Heladeras con Freezer</a>
                                     <a className="dropdown-item" href="#">Lavarropas Automaticos</a>
@@ -53,7 +52,6 @@ function Navbar() {
                                     <a className="dropdown-item" href="#">Ver Mas</a>
                                 </div>
                             </li>
-
                         </ul>
                         <form className="form-inline my-2 my-lg-0">
                             <input className="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" />
