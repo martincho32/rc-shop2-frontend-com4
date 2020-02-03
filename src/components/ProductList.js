@@ -18,7 +18,7 @@ export default function CardsContainer() {
     let productsWithMap = [];
 
     if (products) {
-        productsWithMap = products.map(p => <Cards key={p.id} {...p} />)
+        productsWithMap = products.map(p => <Cards key={p.brand + p.model} {...p} />)
     }
 
     return (
