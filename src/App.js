@@ -1,9 +1,8 @@
 import React from 'react';
 import './App.css';
-import ProductList from './components/ProductList';
+import HomePage from './pages/HomePage';
 import Navbar from './components/Nabvar';
 import {
-  BrowserRouter as Router,
   Switch,
   Route
 } from "react-router-dom";
@@ -14,7 +13,7 @@ function App() {
       <Navbar />
 
       <Switch>
-        <Route exact path="/" component={ProductList} />
+        <Route exact path="/" component={HomePage} />
         {/* <Route path="/Details" component={Details} /> */}
         {/* <Route path="/Cart" component={Cart} /> */}
         {/* <Route component={Default} /> */}

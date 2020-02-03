@@ -2,7 +2,6 @@ import React from 'react';
 import RollingLogo from '../images/carrito.png';
 import { Link } from "react-router-dom";
 
-
 function Navbar() {
     return (
         <div>
