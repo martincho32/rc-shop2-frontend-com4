@@ -4,6 +4,7 @@ import HomePage from './pages/HomePage';
 import Navbar from './components/Nabvar';
 import Carrousel from './components/Carrousel';
 import Footer from './components/Footer';
+import Cart from './components/Cart';
 import {
   Switch,
   Route
@@ -19,7 +20,7 @@ function App() {
       <Switch>
         <Route exact path="/" component={HomePage} />
         {/* <Route path="/Details" component={Details} /> */}
-        {/* <Route path="/Cart" component={Cart} /> */}
+        <Route path="/Cart" component={Cart} />
         {/* <Route component={Default} /> */}
       </Switch>
     </div>
