@@ -1,23 +1,39 @@
 class CardManager {
 
     key = "cartItems"
-
-    static addProd(prodID) {
-
-        let products = [];
-        if (localStorage.getItem(key)) {
-            products = JSON.parse(localStorage.getItem(key));
+    
+    //Add one or more items to local storage
+    static addProduct(prodID) {
+        const products = [];
+        if (getItem(key)) {
+            products = getItem(key);
         }
         products.push({ 'productID': prodID});
-        localStorage.setItem(key, JSON.stringify(products));
+        setItem(products);
     }
 
-
+    //remove a specific item from local storage
     static removeProduct(prodID){
-
-        let storageProducts = JSON.parse(localStorage.getItem(key));
+        let storageProducts = getItem(key);
         let products = storageProducts.filter(p => p.productID !== prodID );
-        localStorage.setItem(key, JSON.stringify(products));
+        setItem(products);
+    }
+    
+    //get local storage items
+    static getItem () {
+        let item = JSON.parse(localStorage.getItem(key));
+        return item;
+    }
+    
+    //set local storage items
+    static setItem (value) {
+        let item = JSON.stringify(value);
+        localStorage.setItem(key, item);
+    }
+
+    //clears local storage
+    static clearCart () {
+        localStorage.removeItem(key);
     }
 
 }
