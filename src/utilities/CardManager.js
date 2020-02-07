@@ -4,36 +4,57 @@ class CardManager {
 
     //Add one or more items to local storage
     static addProduct(prodID) {
-        const products = [];
-        if (getItem(CardManager.key)) {
-            products = getItem(CardManager.key);
+        let products = [];
+        if (this.getItem(this.key)) {
+            products = getItem(this.key);
+        };
+        products.pushProductToArray({ 'productID': prodID }, products);
+        this.setItem([products]);
+    }
+
+    //checks if item is already in cart
+    static isItInCart(prodID) {
+        let flag = false;
+        const products = this.getItem(this.key);
+        products.forEach(p => {
+            if (p == prodID) { flag = true }
+            return flag;
+        });
+    }
+
+    //verify if a product is in cart and pushes it if it isn't
+    static pushProductToArray(obj, arr) {
+        const index = arr.findIndex((item) => item.productID === obj.productID);
+
+        if (index === -1) {
+            arr.push(obj);
+        } else {
+            arr[index] = obj;
         }
-        products.push({ 'productID': prodID });
-        setItem([products]);
     }
 
     //remove a specific item from local storage
     static removeProduct(prodID) {
-        let storageProducts = getItem(CardManager.key);
+        let storageProducts = this.getItem(this.key);
         let products = storageProducts.filter(p => p.productID !== prodID);
-        setItem([products]);
+        this.setItem(products);
     }
 
     //get local storage items
     static getItem() {
-        let item = JSON.parse(localStorage.getItem(CardManager.key));
+        let item = JSON.parse(localStorage.getItem(this.key));
         return item;
     }
 
     //set local storage items
     static setItem(value) {
         let item = JSON.stringify(value);
-        localStorage.setItem(CardManager.key, item);
+        localStorage.setItem(this.key, item);
     }
 
     //clears local storage
     static clearCart() {
-        localStorage.removeItem(CardManager.key);
+        localStorage.removeItem(this.key);
     }
 
 }
