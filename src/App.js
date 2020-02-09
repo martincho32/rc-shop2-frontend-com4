@@ -1,9 +1,10 @@
 import React from 'react';
 import './App.css';
 import HomePage from './pages/HomePage';
-import Navbar from './components/Nabvar';
+/* import Navbar from './components/Nabvar';
 import Carrousel from './components/Carrousel';
-import Footer from './components/Footer';
+ *//* import ProductList from './components/ProductList'; */
+//import Footer from './components/Footer';
 import Cart from './components/Cart';
 import {
   Switch,
@@ -13,10 +14,6 @@ import {
 function App() {
   return (
     <div>
-      <Navbar/>
-      <Carrousel/>
-      <CardsContainer/>
-      <Footer/>
       <Switch>
         <Route exact path="/" component={HomePage} />
         {/* <Route path="/Details" component={Details} /> */}
