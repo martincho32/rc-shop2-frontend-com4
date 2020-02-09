@@ -6,13 +6,17 @@ export default function ProductList() {
     const [dbProducts, setDbProducts] = useState();
 
     //Hook version of componentDidMount()
-    useEffect(async () => {
-        try {
-            const res = await Axios.get('/api/products');
-            setDbProducts(res.data)
-        } catch (e) {
-            console.error(e);
+    useEffect(() => {
+        async function getProducts() {
+            try {
+                const res = await Axios.get('/api/products');
+                setDbProducts(res.data)
+            } catch (e) {
+                console.error(e);
+            }
         }
+
+        getProducts();
     }, []);
 
     const products = dbProducts;
