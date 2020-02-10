@@ -96,7 +96,7 @@ class Cart extends React.Component {
                                                         <div className="form-group">
                                                             <button type="submit" className="btn btn-primary btn-block">
                                                                 Crear Cuenta
-                                                </button>
+                                                             </button>
                                                         </div>
                                                     </form>
                                                 </article>
