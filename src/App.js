@@ -8,6 +8,7 @@ import {
   Switch,
   Route
 } from "react-router-dom";
+import PageDetail from './Pagedetail';
 
 function App() {
   return (
