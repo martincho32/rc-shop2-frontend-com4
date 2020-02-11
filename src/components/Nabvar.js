@@ -1,5 +1,6 @@
 import React from 'react';
 import RollingLogo from '../images/carrito.png';
+import CartLogo from '../images/carro.png';
 import { Link } from "react-router-dom";
 
 function Navbar() {
@@ -57,6 +58,9 @@ function Navbar() {
                             <input className="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" />
                             <button className="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
                         </form>
+                        <div>
+                            <img src={CartLogo}/>
+                        </div>
                     </div>
                 </nav>
             </div>
