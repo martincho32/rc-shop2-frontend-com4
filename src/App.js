@@ -7,6 +7,7 @@ import {
   Route
 } from "react-router-dom";
 import PageDetail from './Pagedetail';
+import Section from './pages/Section';
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
       <Switch>
         <Route exact path="/" component={HomePage} />
         <Route exact path="/pagedetail/:id" component={PageDetail} />
+        <Route exact path= "/section/:category" component={Section}/>
         {/* <Route path="/Details" component={Details} /> */}
         {/* <Route path="/Cart" component={Cart} /> */}
         {/* <Route component={Default} /> */}
