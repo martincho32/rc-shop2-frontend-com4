@@ -8,7 +8,7 @@ export default function HomePage() {
         <>
          <Carrousel />
          <ProductList/>
-         <Footer />  
+         {/* <Footer /> */}  
         </>
     );
 }

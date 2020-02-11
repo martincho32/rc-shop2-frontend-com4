@@ -54,14 +54,15 @@ function Navbar() {
                                 </div>
                             </li>
                         </ul>
-                        <form className="form-inline my-2 my-lg-0">
-                            <input className="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" />
-                            <button className="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-                        </form>
-                        <div>
-                            <img src={CartLogo}/>
+                        
+                            <form className="form-inline my-2 my-lg-0">
+                                <input className="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" />
+                                <button className="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                            </form>
+                            <Link to = "/Cart">
+                                <img src={CartLogo} style={{padding:"10px"}} width="50px" height="50px" />
+                            </Link>
                         </div>
-                    </div>
                 </nav>
             </div>
         </div>
