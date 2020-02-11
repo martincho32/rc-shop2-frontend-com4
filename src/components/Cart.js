@@ -3,22 +3,22 @@ import React from 'react';
 class Cart extends React.Component {
     render() {
         return (
-            <div>
-                <div className="container">
-                    <section>
-                        <div className="container p-2 mb-2">
-                            <h2>Mi Carrito</h2>
-                        </div>
-                        <div className="container">
 
-                        </div>
-                    </section>
-                    <div className='container text-center'>
+            <div className="container">
+                <section>
+                    <div className="container p-2 mb-2">
+                        <h2>Mi Carrito</h2>
+                    </div>
+                    <div className="container">
+
+                    </div>
+                </section>
+                {/* <div className='container text-center'>
                         <div className="spinner-border d-none my-2" style={{ width: "+ 4rem;", height: "4rem;" }} role="status">
                             <span className="sr-only">Loading...</span>
                         </div>
                     </div>
-                    {/* <!-- Modal --> */}
+                    {/* <!-- Modal --> 
                     <div className="modal fade" tabindex="-1" role="dialog">
                         <div className="modal-dialog" role="document">
                             <div className="modal-content">
@@ -38,7 +38,7 @@ class Cart extends React.Component {
                         </div>
                     </div>
                 </div>
-                {/* <!-- Modal de Inicio de sesion y creacion de cuenta / Tarea 2 - Header --> */}
+                {/* <!-- Modal de Inicio de sesion y creacion de cuenta / Tarea 2 - Header --> 
                 <div className="modal fade" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
                     aria-hidden="true">
                     <div className="modal-dialog modal modal-dialog-centered" role="document">
@@ -101,7 +101,7 @@ class Cart extends React.Component {
                                                     </form>
                                                 </article>
                                             </div>
-                                            {/*   <!-- card.// --> */}
+                                            {/*   <!-- card.// --> 
                                         </div>
                                     </div>
                                 </div>
@@ -161,9 +161,9 @@ class Cart extends React.Component {
                                 </div>
                             </div>
                         </div>
-                    </div>
-                </div>
-            </div >
+                    </div>*/}
+            </div>
+
         );
     }
 }
