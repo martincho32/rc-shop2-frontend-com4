@@ -13,15 +13,13 @@ function App() {
   return (
     <div>
       <Navbar/>
-      <Carrousel/>
-      <CardsContainer/>
+        <Switch>
+          <Route exact path="/" component={HomePage} />
+          {/* <Route path="/Details" component={Details} /> */}
+          {/* <Route path="/Cart" component={Cart} /> */}
+          {/* <Route component={Default} /> */}
+        </Switch>
       <Footer/>
-      <Switch>
-        <Route exact path="/" component={HomePage} />
-        {/* <Route path="/Details" component={Details} /> */}
-        {/* <Route path="/Cart" component={Cart} /> */}
-        {/* <Route component={Default} /> */}
-      </Switch>
     </div>
   );
 }
