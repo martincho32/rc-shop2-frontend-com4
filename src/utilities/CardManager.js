@@ -3,12 +3,12 @@ class CardManager {
     static key = "cartItems"
 
     //Add one or more items to local storage
-    static addProduct(prodID) {
+    static addProduct(prodID, quantity) {
         let products = [];
         if (this.getItem(this.key)) {
             products = getItem(this.key);
         };
-        products.pushProductToArray({ 'productID': prodID }, products);
+        products.pushProductToArray({ 'productID': prodID, 'quantity': quantity }, products);
         this.setItem([products]);
     }
 
