@@ -7,10 +7,10 @@ import Nabvar from '../components/Nabvar';
 export default function HomePage() {
     return (
         <>
-         <Nabvar/>
+         
          <Carrousel />
          <ProductList/>
-         <Footer />  
+           
         </>
     );
 }
