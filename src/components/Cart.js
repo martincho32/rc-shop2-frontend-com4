@@ -1,5 +1,5 @@
 import React from 'react';
-import Car1 from '../images/car1.jpg';
+import Photo from '../images/123.jpg';
 class Cart extends React.Component {
     render() {
         return (
@@ -12,7 +12,7 @@ class Cart extends React.Component {
                     <div className="container">
                         <div className="row border-bottom border-danger align-items-center">
                             <div className="col">
-                                <img style={{ width: "150px", height: "150px" }} src={Car1} />
+                                <img style={{ width: "150px", height: "150px" }} src={Photo} />
                             </div>
                             <div className="col">
                                 <p>Celular</p>
@@ -31,7 +31,7 @@ class Cart extends React.Component {
                         </div>
                         <div className="row border-bottom border-danger align-items-center">
                             <div className="col">
-                                <img style={{ width: "150px", height: "150px" }} src={Car1} />
+                                <img style={{ width: "150px", height: "150px" }} src={Photo} />
                             </div>
                             <div className="col">
                                 <p>Celular</p>
