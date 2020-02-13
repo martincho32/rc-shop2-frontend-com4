@@ -25,24 +25,24 @@ class PageDetail extends React.Component {
     }
 
 
+    discountPrice = () => {
+        if(this.state.product.discountPercentage >= 0) {
+            let newPrice = this.state.product.price - (this.state.product.price * this.state.product.discountPercentage) / 100
+            return (
+                <div>
+                    <h1 className="text-center">${newPrice}</h1>
+                    <h3 className="text-center"><strike className="text-muted pr-3">${this.state.product.price}</strike><span className="text-success">{this.state.product.discountPercentage}%Off</span></h3>
+                </div>
+            );
+        } else {
+            return (
+                <h1 className="text-danger text-center">${this.state.product.price}</h1>
+            );
+        }
+    };        
+
     render() {
         let product = this.state.product;
-
-        const discountPrice = () => {
-            if(product.discountPercentage >= 0) {
-                let newPrice = product.price - (product.price * product.discountPercentage) / 100
-                return (
-                    <div>
-                        <h1 className="text-center">${newPrice}</h1>
-                        <h3 className="text-center"><strike className="text-muted pr-3">${product.price}</strike><span className="text-success">{product.discountPercentage}%Off</span></h3>
-                    </div>
-                );
-            } else {
-                return (
-                    <h1 className="text-danger text-center">${product.price}</h1>
-                );
-            }
-        };        
        
         return (
           
@@ -58,7 +58,7 @@ class PageDetail extends React.Component {
                     <h2 className="text-center mt-3">{ product.brand }</h2>
                     <h2 className="text-center mt-3">{ product.model }</h2>
                     <div className="my-4">
-                        { discountPrice() }
+                        { this.discountPrice() }
                     </div>
                     <div className="d-flex justify-content-center my-3"><button  onClick={this.onClickHandler}type="button" className="btn btn-success btn-lg d-none d-md-block">Comprar</button></div>
                     <button onClick={this.onClickHandler} type="button" class="btn btn-success btn-lg btn-block mb-3 d-md-none">Comprar</button>
