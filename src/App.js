@@ -2,6 +2,8 @@ import React from 'react';
 import './App.css';
 import HomePage from './pages/HomePage';
 import Navbar from './components/Nabvar';
+import Carrousel from './components/Carrousel';
+import Footer from './components/Footer';
 import {
   Switch,
   Route
@@ -12,6 +14,7 @@ import Section from './pages/Section';
 function App() {
   return (
     <div>
+
       <Navbar />
 
       <Switch>
@@ -22,6 +25,9 @@ function App() {
         {/* <Route path="/Cart" component={Cart} /> */}
         {/* <Route component={Default} /> */}
       </Switch>
+
+      <Footer/>
+
     </div>
   );
 }
