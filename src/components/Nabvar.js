@@ -1,5 +1,6 @@
 import React from 'react';
 import RollingLogo from '../images/carrito.png';
+import CartLogo from '../images/carro.png';
 import { Link } from "react-router-dom";
 
 function Navbar() {
@@ -21,9 +22,9 @@ function Navbar() {
                                 <a className="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                     TV, Audio y Video </a>
                                 <div className="dropdown-menu" aria-labelledby="navbarDropdown">
-                                    <a className="dropdown-item" href="#">Smart TV</a>
-                                    <a className="dropdown-item" href="#">Full HD</a>
-                                    <a className="dropdown-item" href="#">TV por marcas</a>
+                                    <Link className="dropdown-item" to="/section/smart tv">Smart TV</Link>
+                                    <Link className="dropdown-item" to="/section/full hd">Full HD</Link>
+                                    <Link className="dropdown-item" to="/section/tv por marcas">TV por marcas</Link>
                                     <div className="dropdown-divider"></div>
                                     <a className="dropdown-item" href="#">Ver Mas</a>
                                 </div>
@@ -32,10 +33,10 @@ function Navbar() {
                                 <a className="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                     Celulares,Tablets y Notebooks </a>
                                 <div className="dropdown-menu" aria-labelledby="navbarDropdown">
-                                    <a className="dropdown-item" href="#">Celulares Liberados</a>
-                                    <a className="dropdown-item" href="#">Cargadores Portatiles</a>
-                                    <a className="dropdown-item" href="#">Notebooks</a>
-                                    <a className="dropdown-item" href="#">Tablets</a>
+                                    <Link className="dropdown-item" to="/section/celulares liberados">Celulares Liberados</Link>
+                                    <Link className="dropdown-item" to="/section/cargadores portatiles">Cargadores Portatiles</Link>
+                                    <Link className="dropdown-item" to="/section/notebooks">Notebooks</Link>
+                                    <Link className="dropdown-item" to="/section/tablets">Tablets</Link>
                                     <div className="dropdown-divider"></div>
                                     <a className="dropdown-item" href="#">Ver Mas</a>
                                 </div>
@@ -44,10 +45,10 @@ function Navbar() {
                                 <a className="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                     Electrodomesticos y Accesorios </a>
                                 <div className="dropdown-menu" aria-labelledby="navbarDropdown">
-                                    <a className="dropdown-item" href="#">Heladeras con Freezer</a>
-                                    <a className="dropdown-item" href="#">Lavarropas Automaticos</a>
-                                    <a className="dropdown-item" href="#">Aires Acondicionados</a>
-                                    <a className="dropdown-item" href="#">Splits</a>
+                                    <Link className="dropdown-item" to="/section/heladeras con freezer">Heladeras con Freezer</Link>
+                                    <Link className="dropdown-item" to="/section/lavarropas automaticos">Lavarropas Automaticos</Link>
+                                    <Link className="dropdown-item" to="/section/aires">Aires Acondicionados</Link>
+                                    <Link className="dropdown-item" to="/section/splits">Splits</Link>
                                     <div className="dropdown-divider"></div>
                                     <a className="dropdown-item" href="#">Ver Mas</a>
                                 </div>
@@ -57,11 +58,13 @@ function Navbar() {
                             <input className="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" />
                             <button className="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
                         </form>
+                        <Link to="/Cart">
+                            <img src={CartLogo} style={{ padding: "10px" }} width="50px" height="50px" />
+                        </Link>
                     </div>
                 </nav>
             </div>
         </div>
     );
 }
-
 export default Navbar;
