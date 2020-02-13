@@ -3,7 +3,7 @@ class CardManager {
     static key = "cartItems"
 
     //Add one or more items to local storage
-    static addProduct(prodID) {
+    static addProduct(prodID, quantity) {
         let products = [];
         if (CardManager.getItem(CardManager.key)) {
             products = CardManager.getItem(CardManager.key);
