@@ -6,7 +6,7 @@ import {
   Switch,
   Route
 } from "react-router-dom";
-import PageDetail from './Pagedetail';
+import PageDetail from './pages/Pagedetail';
 
 function App() {
   return (
