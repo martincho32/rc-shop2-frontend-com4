@@ -122,7 +122,7 @@ class PageDetail extends React.Component {
                             <div className="col-3"><i class="fas fa-store fa-3x mt-3"></i></div>
                             <div className="col-9 pb-2">
                                 <p className="pt-2">Retiro en la sucursal</p>
-                                <a href="#">Ver sucursales más cercanas <i className="fas fa-chevron-right fa-sm"></i></a>
+                                <a href="https://www.google.com.ar/maps/search/garbarino+bs+as/@-34.6171726,-58.4689384,12z" target="_blank">Ver sucursales más cercanas <i className="fas fa-chevron-right fa-sm"></i></a>
                             </div>
                         </div>
                     </div>
