@@ -20,6 +20,9 @@ class PageDetail extends React.Component {
 
 
     onClickHandler = () => {
+    
+        let products = CardManager.getItem();
+        console.log(products);
         CardManager.addProduct(this.state.product._id);
         this.props.history.push('/Cart');
     }

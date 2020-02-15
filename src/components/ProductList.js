@@ -23,6 +23,7 @@ export default function ProductList() {
     let productsWithMap = [];
 
     //checks if its not null or undefined
+    console.log(products);
     if (products) {
         productsWithMap = products.map(p => <Cards key={p.id} {...p} />)
     }
