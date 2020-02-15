@@ -9,7 +9,7 @@ class Cart extends React.Component {
             <div className="container">
                 <section>
                     <div className="container p-2 mb-2">
-                        <h2>My Cart</h2>
+                        <h2>Mi Carrito</h2>
                     </div>
                     <div className="container">
 
