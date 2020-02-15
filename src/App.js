@@ -6,7 +6,6 @@ import Nabvar from './components/Nabvar';
 //import Carrousel from './components/Carrousel';
 /* import ProductList from './components/ProductList'; */
 import Footer from './components/Footer';
-
 import Cart from './components/Cart';
 import {
   Switch,
