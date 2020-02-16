@@ -5,8 +5,10 @@ import Carrousel from '../components/Carrousel';
 export default function HomePage() {
     return (
         <>
-        <Carrousel />
-        <ProductList /> 
+
+            <Carrousel />
+            <ProductList />
+
         </>
     );
 }
