@@ -14,19 +14,21 @@ export default function Cart() {
 
 	let itemsInLocalStorage = CardManager.getItem();
 
-	useEffect(() => {
-		
-		itemsInLocalStorage.forEach(i => {
-			try {
-				let res = Axios.get(`/api/products/:${i.productID}`);
-				console.log(res);
-				setDbProducts(res.data)
-			} catch (e) {
-				console.error(e);
-			}
-		});
 
-	}, []);
+	async function getProducts() {
+		try {
+			console.log(itemsInLocalStorage[0].productID);
+			const res = await Axios.get(`/api/products/${itemsInLocalStorage[0].productID}`);
+			console.log(res);
+			setDbProducts(res.data)
+		} catch (e) {
+			console.error(e);
+		}
+	}
+
+	useEffect(() => {
+		getProducts();
+	});
 
 	if (products) {
 		mappedProducts = products.map(p => <CartItems key={p.id} {...p} />)

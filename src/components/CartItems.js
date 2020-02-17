@@ -1,13 +1,14 @@
 import React from 'react';
 import ShowDiscount from '../utilities/ShowDiscount'
+import { Link } from 'react-router-dom';
 import Photo from '../images/123.jpg';
 import '../components/CartItems.css'
 
 export default function CartItems(props) {
 
     return (
-        <div className="">
-            < div className="row border-bottom border-danger align-items-center" >
+        < div className="row border-bottom border-danger align-items-center" >
+            <Link to={`/pagedetail/${props._id}`} >
                 <div className="col">
                     <img className="thumbnail" src={props.images[0].path} alt={props.images[0].title} />
                 </div>
@@ -23,7 +24,7 @@ export default function CartItems(props) {
                 <div className="col">
                     <button className="btn btn-danger">Eliminar</button>
                 </div>
-            </div >
+            </Link>
         </div>
     )
 };
