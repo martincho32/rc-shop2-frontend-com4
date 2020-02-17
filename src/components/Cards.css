@@ -4,5 +4,16 @@ div a{
 }
 
 .card-sizing {
-    width: 220px!important;
-  }
+    width: 250px!important;
+}
+
+.h {
+    margin-right: 0em;
+    transition: ease-out 500ms;
+}
+
+.h:hover{
+    border-top: solid 1px red!important;
+    margin-right: 1em;
+    transition: margin 300ms ease-in;
+}

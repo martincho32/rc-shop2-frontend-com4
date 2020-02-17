@@ -45,8 +45,9 @@ export default function Cart() {
 				</div>
 
 				<div className="row mt-3 justify-content-end">
-					<button className="btn btn-danger p-2 mx-2 col-2">Limpiar Carrito</button>
-					<button className="btn btn-success p-2 mx-2 col-2">Finalizar Compra</button>
+					<button className="btn btn-primary p-2 mx-2 ">Seguir Comprando</button>
+					<button className="btn btn-danger p-2 mx-2 ">Limpiar Carrito</button>
+					<button className="btn btn-success p-2 mx-2 ">Finalizar Compra</button>
 				</div>
 			</div>
 		</>
