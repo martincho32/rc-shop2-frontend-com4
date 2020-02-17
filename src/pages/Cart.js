@@ -17,9 +17,7 @@ export default function Cart() {
 					<h2>Mi Carrito</h2>
 				</div>
 
-				{/* Items Container */}
-				<div className="container">
-
+				<div className="container border border-bottom-0">
 					{/* Harcoded card */}
 					<div className="">
 						< div className="row border-bottom border-danger align-items-center" >
@@ -42,10 +40,13 @@ export default function Cart() {
 							</div>
 						</div >
 					</div>
-
 					{/* <CartItems />
 					<CartItems /> */}
+				</div>
 
+				<div className="row mt-3 justify-content-end">
+					<button className="btn btn-danger p-2 mx-2 col-2">Limpiar Carrito</button>
+					<button className="btn btn-success p-2 mx-2 col-2">Finalizar Compra</button>
 				</div>
 			</div>
 		</>

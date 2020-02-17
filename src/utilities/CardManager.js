@@ -5,17 +5,17 @@ class CardManager {
     //Add one or more items to local storage
     static addProduct(prodID, quantity) {
         let products = [];
-        if (CardManager.getItem(CardManager.key)) {
-            products = CardManager.getItem(CardManager.key);
+        if (this.getItem(this.key)) {
+            products = this.getItem(this.key);
         };
-        CardManager.pushProductToArray({ 'productID': prodID, quantity}, products);
-        CardManager.setItem(products);
+        this.pushProductToArray({ 'productID': prodID, quantity}, products);
+        this.setItem(products);
     }
 
     //checks if item is already in cart
     static isItInCart(prodID) {
         let flag = false;
-        const products = CardManager.getItem(CardManager.key);
+        const products = this.getItem(this.key);
         products.forEach(p => {
             if (p == prodID) { flag = true }
         });
@@ -35,26 +35,26 @@ class CardManager {
 
     //remove a specific item from local storage
     static removeProduct(prodID) {
-        let storageProducts = CardManager.getItem(CardManager.key);
+        let storageProducts = this.getItem(this.key);
         let products = storageProducts.filter(p => p.productID !== prodID);
-        CardManager.setItem(products);
+        this.setItem(products);
     }
 
     //get local storage items
     static getItem() {
-        let item = JSON.parse(localStorage.getItem(CardManager.key));
+        let item = JSON.parse(localStorage.getItem(this.key));
         return item;
     }
 
     //set local storage items
     static setItem(value) {
         let item = JSON.stringify(value);
-        localStorage.setItem(CardManager.key, item);
+        localStorage.setItem(this.key, item);
     }
 
     //clears local storage
     static clearCart() {
-        localStorage.removeItem(CardManager.key);
+        localStorage.removeItem(this.key);
     }
 
 }
