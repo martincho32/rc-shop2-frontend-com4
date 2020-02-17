@@ -14,13 +14,13 @@ class Carrousel extends React.Component {
                 </ol>
                 <div class="carousel-inner">
                     <div class="carousel-item active">
-                        <img src={car1} class="d-block w-100 img-fluid" alt="image alternative" />
+                        <img src={car1} class="d-block w-100 img-fluid" alt="alternative" />
                     </div>
                     <div class="carousel-item">
-                        <img src={car2} class="d-block w-100 img-fluid" alt="image alternative" />
+                        <img src={car2} class="d-block w-100 img-fluid" alt="alternative" />
                     </div>
                     <div class="carousel-item">
-                        <img src={car3} class="d-block w-100 img-fluid" alt="image alternative" />
+                        <img src={car3} class="d-block w-100 img-fluid" alt="alternative" />
                     </div>
                 </div>
                 <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">

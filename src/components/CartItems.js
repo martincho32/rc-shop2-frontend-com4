@@ -9,16 +9,16 @@ export default function CartItems(props) {
         <div className="">
             < div className="row border-bottom border-danger align-items-center" >
                 <div className="col">
-                    <img className="thumbnail" src={/*props.images[0].path*/ Photo} />
+                    <img className="thumbnail" src={props.images[0].path} />
                 </div>
                 <div className="col">
-                    <p>{/*props.brand + " - " + props.model*/} Celular</p>
+                    <p>{props.brand + " - " + props.model}</p>
                 </div>
                 <div className="col">
                     <input className="form-control" type="number" />
                 </div>
                 <div className="col">
-                    {/*ShowDiscount(props)*/} $ 100.000,00
+                    {ShowDiscount(props)}
                 </div>
                 <div className="col">
                     <button className="btn btn-danger">Eliminar</button>

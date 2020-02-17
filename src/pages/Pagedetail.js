@@ -78,8 +78,8 @@ class PageDetail extends React.Component {
             <div className="container-fluid row mx-auto">
                 <div className="col-12 col-md-8 ">
                     <div key={product._id} className="mb-3">                        
-                        <img src={product.images?product.images[0].path:""} className="d-md-none w-100" alt="..."/>
-                        <img src={product.images?product.images[0].path:""} className="d-none d-md-block w-50 mx-auto" alt="..."/>
+                        <img src={product.images?product.images[0].path:""} className="d-md-none w-100" alt="alternative"/>
+                        <img src={product.images?product.images[0].path:""} className="d-none d-md-block w-50 mx-auto" alt="alternative"/>
                     </div>
                     <h1 className="text-center d-none d-md-block">{ product.description }</h1>
                 </div>
@@ -110,12 +110,12 @@ class PageDetail extends React.Component {
                                 <p className="text-muted">Precio financiado: $ {this.calculateFee18() * 18} - CFT 35.54% - TEA 45.54%</p>
                             </div>
                         </div>
-                        <div className="row border pl-3 border-top-0"><a href="#">Ver cuotas y medios de pago <i className="fas fa-chevron-right fa-sm"></i></a></div>
+                        <div className="row border pl-3 border-top-0"><a href="#top">Ver cuotas y medios de pago <i className="fas fa-chevron-right fa-sm"></i></a></div>
                         <div class="row mt-4 border">
                             <div className="col-3"><i className="fas fa-truck fa-3x mt-3"></i></div>
                             <div className="col-9 pb-2">
                                 <p className="pt-2">Envío a domicilio</p>
-                                <a href="#">Calcular costo de envío <i className="fas fa-chevron-right fa-sm"></i></a>
+                                <a href="#top">Calcular costo de envío <i className="fas fa-chevron-right fa-sm"></i></a>
                             </div>
                         </div>
                         <div class="row mb-4 border border-top-0">

@@ -17,7 +17,7 @@ class CardManager {
         let flag = false;
         const products = this.getItem(this.key);
         products.forEach(p => {
-            if (p == prodID) { flag = true }
+            if (p === prodID) { flag = true }
         });
         return flag;
     }
