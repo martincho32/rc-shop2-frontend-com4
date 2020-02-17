@@ -26,7 +26,7 @@ export default function ProductList() {
     }, []);
 
     if (products) {
-        productsWithMap = products.map(p => <Cards key={p.id} {...p} />)
+        productsWithMap = products.map(p => <Cards key={p._id } {...p} />)
     }
 
     return (

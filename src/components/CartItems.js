@@ -9,7 +9,7 @@ export default function CartItems(props) {
         <div className="">
             < div className="row border-bottom border-danger align-items-center" >
                 <div className="col">
-                    <img className="thumbnail" src={props.images[0].path} />
+                    <img className="thumbnail" src={props.images[0].path} alt={props.images[0].title} />
                 </div>
                 <div className="col">
                     <p>{props.brand + " - " + props.model}</p>

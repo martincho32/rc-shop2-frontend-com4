@@ -51,15 +51,15 @@ class Footer extends React.Component {
                             <li><a href="#top">email:ecommerce@rolling.com</a></li>
                         </ul>
                     </div>
-                    <div class="col-md-4 col-sm-4">
+                    <div className="col-md-4 col-sm-4">
                         <form >
                             <label >Recibi ofertas y promociones por Email!</label>
-                            <div class="row">
-                                <div class="col-9 mr-0 pr-1">
-                                    <input class="form-control" type="text" placeholder="ingresá tu email..."></input>
+                            <div className="row">
+                                <div className="col-9 mr-0 pr-1">
+                                    <input className="form-control" type="text" placeholder="ingresá tu email..."></input>
                                 </div>
-                                <div class="col-3 ml-0 pl-0">
-                                    <button class="btn btn-danger">Suscribirme!</button>
+                                <div className="col-3 ml-0 pl-0">
+                                    <button className="btn btn-danger">Suscribirme!</button>
                                 </div>
                             </div>
                         </form>
