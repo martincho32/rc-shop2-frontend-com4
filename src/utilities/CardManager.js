@@ -8,8 +8,8 @@ class CardManager {
         if (CardManager.getItem(CardManager.key)) {
             products = CardManager.getItem(CardManager.key);
         };
-        CardManager.pushProductToArray({ 'productID': prodID }, products);
-        CardManager.setItem([products]);
+        CardManager.pushProductToArray({ 'productID': prodID, quantity}, products);
+        CardManager.setItem(products);
     }
 
     //checks if item is already in cart
@@ -18,8 +18,8 @@ class CardManager {
         const products = CardManager.getItem(CardManager.key);
         products.forEach(p => {
             if (p == prodID) { flag = true }
-            return flag;
         });
+        return flag;
     }
 
     //verify if a product is in cart and pushes it if it isn't

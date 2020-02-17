@@ -4,7 +4,7 @@ import RollingLogo from '../images/carrito.png';
 class Footer extends React.Component {
     render() {
         return (
-            <footer className="container-fluid p-2 mt-4 bg-light">
+            <footer className="container-fluid p-5 mt-4 bg-light">
                 <div>
                     <br />
                     <span><b>RollingShop</b></span>
@@ -12,7 +12,6 @@ class Footer extends React.Component {
                         <img src={RollingLogo} width="70" height="70" alt="carrito de compra" />
                     </a>
                 </div>
-                {/* <div className="main-footer container"> */}
                 <div className="row">
                     <div className="col-md col-sm-4">
                         <b>Información</b>
@@ -52,19 +51,32 @@ class Footer extends React.Component {
                             <li><a href="#">email:ecommerce@rolling.com</a></li>
                         </ul>
                     </div>
+                    <div class="col-md-4 col-sm-4">
+                        <form >
+                            <label >Recibi ofertas y promociones por Email!</label>
+                            <div class="row">
+                                <div class="col-9 mr-0 pr-1">
+                                    <input class="form-control" type="text" placeholder="ingresá tu email..."></input>
+                                </div>
+                                <div class="col-3 ml-0 pl-0">
+                                    <button class="btn btn-danger">Suscribirme!</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
                 </div>
                 <hr />
                 <div>
-                       <p>Copyright 2001-2018 | Todos los derechos reservados RollingShop.com. RollingShop S.A.C.I. e I.
-                        Valentín Gómez
-                        2813 (1191) | Capital Federal | Argentina
+                    <p>Copyright 2001-2018 | Todos los derechos reservados RollingShop.com. RollingShop S.A.C.I. e I.
+                     Valentín Gómez
+                     2813 (1191) | Capital Federal | Argentina
 
-                        Las fotos son a modo ilustrativo. La venta de cualquiera de los productos publicados está sujeta a
-                        la
-                        verificación de stock. Los precios online y los planes de financiación para los productos
-                        presentados/publicados en www.rollingshop.com.ar y/o www.rollingshop.com son válidos exclusivamente
-                        para la
-                        compra vía internet en las páginas antes mencionadas. Las especificaciones técnicas y descripciones
+                     Las fotos son a modo ilustrativo. La venta de cualquiera de los productos publicados está sujeta a
+                     la
+                     verificación de stock. Los precios online y los planes de financiación para los productos
+                     presentados/publicados en www.rollingshop.com.ar y/o www.rollingshop.com son válidos exclusivamente
+                     para la
+                     compra vía internet en las páginas antes mencionadas. Las especificaciones técnicas y descripciones
                         están sujetas a cambios sin previo aviso.</p>
                 </div>
                 {/* </div> */}

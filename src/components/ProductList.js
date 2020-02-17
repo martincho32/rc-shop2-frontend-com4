@@ -3,7 +3,6 @@ import Axios from 'axios';
 import Cards from './Cards';
 
 
-
 export default function ProductList() {
     const [dbProducts, setDbProducts] = useState();
     const products = dbProducts;
