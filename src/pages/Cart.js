@@ -1,7 +1,8 @@
 import React, {
 	useEffect,
-	useState
+	useState,
 } from 'react';
+import { useHistory } from 'react-router-dom';
 import Axios from 'axios';
 import CartItems from '../components/CartItems';
 import CardManager from '../utilities/CardManager';
@@ -10,6 +11,7 @@ import CardManager from '../utilities/CardManager';
 export default function Cart() {
 	const [dbProducts, setDbProducts] = useState([]);
 	let itemsInLocalStorage = CardManager.getItem();
+	const history = useHistory();
 	let mappedItems = [];
 	const products = [];
 
@@ -30,6 +32,11 @@ export default function Cart() {
 		getProducts();
 	}, []);
 
+	const clearCartOnClickHandler = () => {
+		CardManager.clearCart();
+		setDbProducts();
+	}
+
 	if(dbProducts) {
 		mappedItems = dbProducts.map(p => <CartItems key={p._id} {...p} /> );
 	}
@@ -41,13 +48,11 @@ export default function Cart() {
 					<h2>Mi Carrito</h2>
 				</div>
 				<div className="container border border-bottom-0">
-					{
-						mappedItems
-					}
+					{ mappedItems  }
 				</div>
 				<div className="row mt-3 justify-content-end">
-					<button className="btn btn-primary p-2 mx-2">Seguir Comprando</button>
-					<button className="btn btn-secondary p-2 mx-2">Limpiar Carrito</button>
+					<button className="btn btn-primary p-2 mx-2" onClick={() => history.push('/')}>Seguir Comprando</button>
+					<button className="btn btn-secondary p-2 mx-2" onClick={ clearCartOnClickHandler }>Limpiar Carrito</button>
 					<button className="btn btn-success p-2 mx-2">Finalizar Compra</button>
 				</div>
 			</div>
