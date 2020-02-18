@@ -81,8 +81,8 @@ class PageDetail extends React.Component {
             <div className="container-fluid row mx-auto mt-4">
                 <div className="col-12 col-md-8 ">
                     <div key={product._id} className="mb-3">                        
-                        <img src={product.images?product.images[0].path:""} className="d-md-none w-100" alt="..."/>
-                        <img src={product.images?product.images[0].path:""} className="d-none d-md-block w-50 mx-auto" alt="..."/>
+                        <img src={product.images?product.images[0].path:""} className="d-md-none w-100" alt="aadsdas"/>
+                        <img src={product.images?product.images[0].path:""} className="d-none d-md-block w-50 mx-auto" alt="dwadawd"/>
                     </div>
                     <h4 className="text-center d-none d-md-block">{ product.description }</h4>
                 </div>
@@ -118,7 +118,7 @@ class PageDetail extends React.Component {
                             <div className="col-3"><i className="fas fa-truck fa-3x mt-3"></i></div>
                             <div className="col-9 pb-2">
                                 <p className="pt-2">Envío a domicilio</p>
-                                <a href="#">Calcular costo de envío <i className="fas fa-chevron-right fa-sm"></i></a>
+                                <a href="#top">Calcular costo de envío <i className="fas fa-chevron-right fa-sm"></i></a>
                             </div>
                         </div>
                         <div className="row mb-4 border border-top-0">

@@ -1,12 +1,10 @@
 import React from 'react';
 import './App.css';
-import HomePage from './pages/HomePage';
 import Nabvar from './components/Nabvar';
-//* import ProductList from './components/ProductList'; */
-//import Carrousel from './components/Carrousel';
-/* import ProductList from './components/ProductList'; */
 import Footer from './components/Footer';
-import Cart from './components/Cart';
+import HomePage from './pages/HomePage';
+import Cart from './pages/Cart';
+import PageDetail from './pages/Pagedetail';
 import {
   Switch,
   Route

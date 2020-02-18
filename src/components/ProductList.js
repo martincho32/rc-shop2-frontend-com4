@@ -1,36 +1,36 @@
-import React, { useEffect, useState } from 'react';
+import React, { 
+    useEffect, 
+    useState 
+} from 'react';
 import Axios from 'axios';
 import Cards from './Cards';
 
+
 export default function ProductList() {
     const [dbProducts, setDbProducts] = useState();
+    let productsWithMap = [];
+
+    async function getProducts() {
+        try {
+            const res = await Axios.get('/api/products');
+            setDbProducts(res.data)
+        } catch (e) {
+            console.error(e);
+        }
+    }
 
     //Hook version of componentDidMount()
     useEffect(() => {
-        async function getProducts() {
-            try {
-                const res = await Axios.get('/api/products');
-                setDbProducts(res.data)
-            } catch (e) {
-                console.error(e);
-            }
-        }
-
         getProducts();
     }, []);
 
-    const products = dbProducts;
-    let productsWithMap = [];
-
-    //checks if its not null or undefined
-    console.log(products);
-    if (products) {
-        productsWithMap = products.map(p => <Cards key={p._id} {...p} />)
+    if (dbProducts) {
+        productsWithMap = dbProducts.map(p => <Cards key={p._id } {...p} />)
     }
 
     return (
         <>
-            <div className="container d-flex flex-wrap">
+            <div className="container d-flex flex-wrap p-2">
                 {productsWithMap}
             </div>
         </>
