@@ -9,18 +9,18 @@ import CardManager from '../utilities/CardManager';
 
 export default function Cart() {
 	const [dbProducts, setDbProducts] = useState([]);
-	const products = dbProducts;
-	let mappedProducts = [];
-
 	let itemsInLocalStorage = CardManager.getItem();
-
+	let mappedItems = [];
+	const products = [];
 
 	async function getProducts() {
 		try {
-			console.log(itemsInLocalStorage[0].productID);
-			const res = await Axios.get(`/api/products/${itemsInLocalStorage[0].productID}`);
-			console.log(res);
-			setDbProducts(res.data)
+			for (const item of itemsInLocalStorage) {
+				const res = await Axios.get(`/api/products/${item.productID}`);
+				products.push(res.data);
+			}
+			setDbProducts(products)
+			console.log(products);
 		} catch (e) {
 			console.error(e);
 		}
@@ -28,10 +28,10 @@ export default function Cart() {
 
 	useEffect(() => {
 		getProducts();
-	});
+	}, []);
 
-	if (products) {
-		mappedProducts = products.map(p => <CartItems key={p.id} {...p} />)
+	if(dbProducts) {
+		mappedItems = dbProducts.map(p => <CartItems key={p._id} {...p} /> );
 	}
 
 	return (
@@ -41,7 +41,9 @@ export default function Cart() {
 					<h2>Mi Carrito</h2>
 				</div>
 				<div className="container border border-bottom-0">
-					{mappedProducts}
+					{
+						mappedItems
+					}
 				</div>
 				<div className="row mt-3 justify-content-end">
 					<button className="btn btn-primary p-2 mx-2">Seguir Comprando</button>

@@ -8,7 +8,6 @@ import Cards from './Cards';
 
 export default function ProductList() {
     const [dbProducts, setDbProducts] = useState();
-    const products = dbProducts;
     let productsWithMap = [];
 
     async function getProducts() {
@@ -25,8 +24,8 @@ export default function ProductList() {
         getProducts();
     }, []);
 
-    if (products) {
-        productsWithMap = products.map(p => <Cards key={p._id } {...p} />)
+    if (dbProducts) {
+        productsWithMap = dbProducts.map(p => <Cards key={p._id } {...p} />)
     }
 
     return (
