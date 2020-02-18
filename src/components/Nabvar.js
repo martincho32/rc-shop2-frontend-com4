@@ -1,11 +1,33 @@
 import React from 'react';
 import RollingLogo from '../images/carrito.png';
 import CartLogo from '../images/carro.png';
-import { Link } from "react-router-dom";
+import { Link, Redirect } from "react-router-dom";
 
-function Navbar() {
-    return (
-        <div>
+class Navbar extends React.Component {
+    constructor(props) {
+        super(props);
+        
+        this.state = {
+            goToSearchPage: false,
+            inputValue: ""
+        }
+    }
+
+    onClickHandler = () => {
+
+        this.setState({ goToSearchPage: true});
+        // console.log(this.props);
+        // window.location=`/search?${this.props.location.search}`;
+        // this.props.history.push(`/search`);
+    }
+
+    render() {
+        let result = null;
+        if(this.state.goToSearchPage) {
+            result = <Redirect to={`/search?brand=${this.state.inputValue}`} />;
+            this.setState({ goToSearchPage: false});
+        } else {
+            result = <div>
             <div>
                 <nav className="navbar navbar-expand-lg navbar-light bg-warning">
                     <Link to="/">
@@ -55,8 +77,8 @@ function Navbar() {
                             </li>
                         </ul>
                         <form className="form-inline my-2 my-lg-0">
-                            <input className="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" />
-                            <button className="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                            <input onChange={ (e) => this.setState({ inputValue: e.target.value}) } value={this.state.inputValue} className="form-control mr-sm-2" type="search" name="brand" placeholder="Search" aria-label="Search" />
+                            <button className="btn btn-outline-success my-2 my-sm-0" onClick= { this.onClickHandler } type="submit">Search</button>
                         </form>
                         <Link to="/Cart">
                             <img src={CartLogo} style={{ padding: "10px" }} width="50px" height="50px" />
@@ -65,7 +87,13 @@ function Navbar() {
                 </nav>
             </div>
         </div>
-    );
+        }
+        return (
+            <>{ result }</>
+            
+        );
+    }
 }
+
 
 export default Navbar;
