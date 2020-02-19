@@ -1,76 +1,51 @@
-import React from 'react';
-
+import React, { useState } from 'react';
+import Axios from 'axios';
 
 
 export default function Email() {
+	const [recipient, setRecipient] = useState();
 
-  state = {
-    email: {
-      recipient: ''
-    }
-  }
+	const sendEmail = () => {
+		const email = recipient;
+		try{
+		// 	Axios.post(`/send-email?recipient=${email}`) //query string url
 
-  sendEmail = _ => {
-    const { email } = this.state;
-    fetch(`http://127.0.0.1:4000/send-email?recipient=${email.recipient}`) //query string url
-      .catch(err => console.error(err))
-  }
-  
-  const { email } = this.state;
+		// fetch(`/send-email?recipient=${email.recipient}`)
+		// 	.catch(err => console.error(err))
+		
+		}
+		catch (e) {
+			console.error("Send Email: " + e);
+		}
+	}
 
-  return (
-    <>
-      <form >
-        <label >Recibi ofertas y promociones por Email!</label>
-        <div className="row">
-          <div className="col-9 mr-0 pr-1">
-            <input className="form-control"
-              type="text"
-              placeholder="ingresá tu email..."
-              value={email.recipient}
-              onChange={e => this.setState({ email: { ...email, recipient: e.target.value } })}
-            />
-          </div>
-          <div className="col-3 ml-0 pl-0">
-            <button onClick={this.sendEmail} className="btn btn-danger">Suscribirme!</button>
-          </div>
-        </div>
-      </form>
-    </>
-  );
+	const onClickHandler = () => {
+		sendEmail();
+	}
+
+	const onchangeHandler = (e) => {
+		setRecipient(e.target.value)
+	}
+
+	return (
+		<>
+			<form >
+				<label >Recibi ofertas y promociones por Email!</label>
+				<div className="row">
+					<div className="col-9 mr-0 pr-1">
+						<input className="form-control"
+							type="text"
+							placeholder="ingresá tu email..."
+							value={recipient}
+							onChange={onchangeHandler}
+						/>
+					</div>
+					<div className="col-3 ml-0 pl-0">
+						<button onClick={onClickHandler} className="btn btn-danger">Suscribirme!</button>
+					</div>
+				</div>
+			</form>
+		</>
+	);
 }
 
-
-
-// class Email extends Component {
-
-//   state = {
-//     email: {
-//       recipient: ''
-//     }
-//   }
-
-//   sendEmail = _ => {
-//     const { email } = this.state;
-//     fetch(`http://127.0.0.1:4000/send-email?recipient=${email.recipient}`) //query string url
-//       .catch(err => console.error(err))
-//   }
-
-//   render() {
-//     const { email } = this.state;
-//     return (
-//       <div className="App">
-//         <div style={{ marginTop: 10 }} >
-//           <h2> Send Email </h2>
-//           <label> Recipient </label>
-//           <br />
-//           <input className="form-control" type="text" placeholder="ingresá tu email..." value={email.recipient} onChange={e => this.setState({ email: { ...email, recipient: e.target.value } })} />
-
-//           <button onClick={this.sendEmail} className="btn btn-danger">Suscribirme!</button>
-//         </div>
-//       </div>
-//     );
-//   }
-// }
-
-// export default Email;

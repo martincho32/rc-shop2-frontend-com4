@@ -1,6 +1,6 @@
 import React from 'react';
 import RollingLogo from '../images/carrito.png';
-import Email from './SubmitEmail';
+import Email from './Email';
 
 class Footer extends React.Component {
     render() {
@@ -53,7 +53,7 @@ class Footer extends React.Component {
                         </ul>
                     </div>
                     <div className="col-md-4 col-sm-4">
-                        {SubmitEmail}
+                        <Email />
                     </div>
                 </div >
                 <hr />
@@ -70,7 +70,7 @@ class Footer extends React.Component {
                      compra vía internet en las páginas antes mencionadas. Las especificaciones técnicas y descripciones
                         están sujetas a cambios sin previo aviso.</p>
                 </div>
-                {/* </div> */}
+
             </footer >
         );
     }
