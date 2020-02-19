@@ -6,10 +6,7 @@ import CardManager from '../utilities/CardManager';
 
 export default function CartItems(props) {
 
-    // deleteitemOnClickHandler = (prop) => {
-    //     CardManager.removeProduct(prop._id);
-    // };
-
+    
     return (
         < div className="row border-bottom border-danger align-items-center" >
                 <div className="col">
@@ -25,7 +22,7 @@ export default function CartItems(props) {
                     {ShowDiscount(props)}
                 </div>
                 <div className="col">
-                     <button className="btn btn-danger" >Eliminar</button>
+                     <button className="btn btn-danger" onClick={()=> props.removeItem(props._id)}>Eliminar</button>
                 </div>
         </div>
     )
