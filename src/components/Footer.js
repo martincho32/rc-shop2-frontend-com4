@@ -1,5 +1,6 @@
 import React from 'react';
 import RollingLogo from '../images/carrito.png';
+import Email from './SubmitEmail';
 
 class Footer extends React.Component {
     render() {
@@ -52,19 +53,9 @@ class Footer extends React.Component {
                         </ul>
                     </div>
                     <div className="col-md-4 col-sm-4">
-                        <form >
-                            <label >Recibi ofertas y promociones por Email!</label>
-                            <div className="row">
-                                <div className="col-9 mr-0 pr-1">
-                                    <input className="form-control" type="text" placeholder="ingresá tu email..."></input>
-                                </div>
-                                <div className="col-3 ml-0 pl-0">
-                                    <button className="btn btn-danger">Suscribirme!</button>
-                                </div>
-                            </div>
-                        </form>
+                        {SubmitEmail}
                     </div>
-                </div>
+                </div >
                 <hr />
                 <div>
                     <p>Copyright 2001-2018 | Todos los derechos reservados RollingShop.com. RollingShop S.A.C.I. e I.
@@ -80,7 +71,7 @@ class Footer extends React.Component {
                         están sujetas a cambios sin previo aviso.</p>
                 </div>
                 {/* </div> */}
-            </footer>
+            </footer >
         );
     }
 }
