@@ -9,8 +9,6 @@ import {
   Switch,
   Route
 } from "react-router-dom";
-import PageDetail from './pages/Pagedetail';
-import Section from './pages/Section';
 import SearchPage from './pages/SearchPage';
 
 function App() {
@@ -19,13 +17,10 @@ function App() {
 
       <Nabvar />
       <Switch>
-        <Route path="/search" component={SearchPage} />
         <Route exact path="/" component={HomePage} />
-        <Route exact path="/pagedetail/:id" component={PageDetail} />
-        <Route exact path="/section/:category" component={Section} />
-        {/* <Route path="/Details" component={Details} /> */}
-        <Route exact path="/Cart" component={Cart} />
-        {/* <Route component={Default} /> */}
+        <Route path="/search" component={SearchPage} />
+        <Route path="/pagedetail/:id" component={PageDetail} />
+        <Route path="/Cart" component={Cart} />
       </Switch>
       <Footer />
     </div>
