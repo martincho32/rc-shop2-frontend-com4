@@ -2,9 +2,11 @@ import React from 'react';
 import ShowDiscount from '../utilities/ShowDiscount'
 import { Link } from 'react-router-dom';
 import '../components/CartItems.css'
+import CardManager from '../utilities/CardManager';
 
 export default function CartItems(props) {
 
+    
     return (
         < div className="row border-bottom border-danger align-items-center" >
                 <div className="col">
@@ -20,7 +22,7 @@ export default function CartItems(props) {
                     {ShowDiscount(props)}
                 </div>
                 <div className="col">
-                    <button className="btn btn-danger">Eliminar</button>
+                     <button className="btn btn-danger" onClick={()=> props.removeItem(props._id)}>Eliminar</button>
                 </div>
         </div>
     )
