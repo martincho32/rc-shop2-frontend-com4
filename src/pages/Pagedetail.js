@@ -29,7 +29,7 @@ class PageDetail extends React.Component {
 
 
     discountPrice = () => {
-        if(this.state.product.discountPercentage >= 0) {
+        if(this.state.product.discountPercentage > 0) {
             let newPrice = this.state.product.price - (this.state.product.price * this.state.product.discountPercentage) / 100
             return (
                 <div>
@@ -39,7 +39,7 @@ class PageDetail extends React.Component {
             );
         } else {
             return (
-                <h3 className="text-danger text-center">${this.state.product.price}</h3>
+                <h3 className="text-center">${this.state.product.price}</h3>
             );
         }
     };        
@@ -49,7 +49,7 @@ class PageDetail extends React.Component {
         if(this.state.product.discountPercentage >= 0) {
             let newPrice = this.state.product.price - (this.state.product.price * this.state.product.discountPercentage) / 100
             return (
-                ((newPrice * 0.25) + newPrice)  / 12
+                parseFloat((((newPrice * 0.25) + newPrice)  / 12).toFixed(2))
             );
         } else {
             return (
@@ -63,7 +63,7 @@ class PageDetail extends React.Component {
         if(this.state.product.discountPercentage >= 0) {
             let newPrice = this.state.product.price - (this.state.product.price * this.state.product.discountPercentage) / 100
             return (
-                ((newPrice * 0.45) + newPrice)  / 18
+                parseFloat((((newPrice * 0.45) + newPrice)  / 18).toFixed(2))
             );
         } else {
             return (
