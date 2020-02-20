@@ -8,11 +8,10 @@ export default function Email() {
 	const sendEmail = () => {
 		const email = recipient;
 		try{
-		// 	Axios.post(`/send-email?recipient=${email}`) //query string url
+			Axios.post('/api/send-email', {email: email})
+			.then(res => console.log(res))
+			.catch(err => console.log(err));
 
-		// fetch(`/send-email?recipient=${email.recipient}`)
-		// 	.catch(err => console.error(err))
-		
 		}
 		catch (e) {
 			console.error("Send Email: " + e);
@@ -23,13 +22,13 @@ export default function Email() {
 		sendEmail();
 	}
 
-	const onchangeHandler = (e) => {
+	const onChangeHandler = (e) => {
 		setRecipient(e.target.value)
 	}
 
 	return (
 		<>
-			<form >
+			<div>
 				<label >Recibi ofertas y promociones por Email!</label>
 				<div className="row">
 					<div className="col-9 mr-0 pr-1">
@@ -37,14 +36,14 @@ export default function Email() {
 							type="text"
 							placeholder="ingresá tu email..."
 							value={recipient}
-							onChange={onchangeHandler}
+							onChange={onChangeHandler}
 						/>
 					</div>
 					<div className="col-3 ml-0 pl-0">
 						<button onClick={onClickHandler} className="btn btn-danger">Suscribirme!</button>
 					</div>
 				</div>
-			</form>
+			</div>
 		</>
 	);
 }

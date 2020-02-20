@@ -1,12 +1,9 @@
 import React from 'react';
 import ShowDiscount from '../utilities/ShowDiscount'
-import { Link } from 'react-router-dom';
 import '../components/CartItems.css'
-import CardManager from '../utilities/CardManager';
 
 export default function CartItems(props) {
 
-    
     return (
         < div className="row border-bottom border-danger align-items-center" >
                 <div className="col">
