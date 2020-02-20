@@ -3,12 +3,12 @@ import Axios from 'axios';
 
 
 export default function Email() {
-	const [recipient, setRecipient] = useState();
+	const [recipient, setRecipient] = useState('');
 
 	const sendEmail = () => {
 		const email = recipient;
 		try{
-			Axios.post('/api/send-email', {email: email})
+			Axios.post('/email/send-email', {email: email})
 			.then(res => console.log(res))
 			.catch(err => console.log(err));
 
