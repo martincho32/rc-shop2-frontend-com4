@@ -4,7 +4,6 @@ import Nabvar from './components/Nabvar';
 import Footer from './components/Footer';
 import HomePage from './pages/HomePage';
 import Cart from './pages/Cart';
-import PageDetail from './pages/Pagedetail';
 import {
   Switch,
   Route
