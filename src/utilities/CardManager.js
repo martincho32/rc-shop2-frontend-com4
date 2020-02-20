@@ -3,13 +3,28 @@ class CardManager {
     static key = "cartItems"
 
     //Add one or more items to local storage
-    static addProduct(prodID, quantity) {
+    static addProduct(prodID, quantity=1) {
         let products = [];
+<<<<<<< HEAD
+        if (CardManager.getItem(CardManager.key)) {
+            products = CardManager.getItem(CardManager.key);
+            if (CardManager.isItInCart(prodID)) {
+                let prevQty = null;
+                products.forEach(p => {
+                    if (p.productID == prodID) { prevQty = p.quantity }
+                });
+                quantity += prevQty;
+            }
+        };
+        CardManager.pushProductToArray({ 'productID': prodID, quantity }, products);
+        CardManager.setItem(products);
+=======
         if (this.getItem(this.key)) {
             products = this.getItem(this.key);
         };
         this.pushProductToArray({ 'productID': prodID, quantity}, products);
         this.setItem(products);
+>>>>>>> 7ab78ec7f8b6564a6562445268c58173a0cd2bd2
     }
 
     //checks if item is already in cart
@@ -17,7 +32,11 @@ class CardManager {
         let flag = false;
         const products = this.getItem(this.key);
         products.forEach(p => {
+<<<<<<< HEAD
+            if (p.productID == prodID) { flag = true }
+=======
             if (p === prodID) { flag = true }
+>>>>>>> 7ab78ec7f8b6564a6562445268c58173a0cd2bd2
         });
         return flag;
     }
