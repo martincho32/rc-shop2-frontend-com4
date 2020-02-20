@@ -3,7 +3,7 @@ import ShowDiscount from '../utilities/ShowDiscount'
 import { Link } from 'react-router-dom';
 import '../components/CartItems.css';
 import CardManager from '../utilities/CardManager';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 
 export default function CartItems(props) {
 
@@ -34,7 +34,7 @@ export default function CartItems(props) {
                     {ShowDiscount(props)}
                 </div>
                 <div className="col">
-                    <button className="btn btn-danger">Eliminar</button>
+                     <button className="btn btn-danger" onClick={()=> props.removeItem(props._id)}>Eliminar</button>
                 </div>
         </div>
     )
