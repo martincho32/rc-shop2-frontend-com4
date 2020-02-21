@@ -1,32 +1,33 @@
 import React from 'react';
 import './App.css';
-import HomePage from './pages/HomePage';
-//import Carrousel from './components/Carrousel';
- /* import ProductList from './components/ProductList'; */
+import Nabvar from './components/Nabvar';
 import Footer from './components/Footer';
-import Cart from './components/Cart';
+import HomePage from './pages/HomePage';
+import Cart from './pages/Cart';
 import {
   Switch,
   Route
 } from "react-router-dom";
-import PageDetail from './Pagedetail';
-import Navbar from './components/Nabvar';
+import PageDetail from './pages/Pagedetail';
 import Section from './pages/Section';
+import SearchPage from './pages/SearchPage';
 
 function App() {
   return (
     <div>
-      <Navbar />
-        <Switch>
-          <Route exact path="/" component={HomePage} />
-          <Route exact path="/pagedetail/:id" component={PageDetail} />
-          <Route exact path= "/section/:category" component={Section}/>
-          {/* <Route path="/Details" component={Details} /> */}
-          <Route path="/Cart" component={Cart} />
-          {/* <Route component={Default} /> */}
-        </Switch>
-      <Footer/>
-      </div>
+
+      <Nabvar />
+      <Switch>
+        <Route path="/search" component={SearchPage} />
+        <Route exact path="/" component={HomePage} />
+        <Route exact path="/pagedetail/:id" component={PageDetail} />
+        <Route exact path="/section/:category" component={Section} />
+        {/* <Route path="/Details" component={Details} /> */}
+        <Route exact path="/Cart" component={Cart} />
+        {/* <Route component={Default} /> */}
+      </Switch>
+      <Footer />
+    </div>
   );
 }
 export default App;

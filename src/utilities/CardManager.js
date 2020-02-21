@@ -3,13 +3,20 @@ class CardManager {
     static key = "cartItems"
 
     //Add one or more items to local storage
-    static addProduct(prodID, quantity) {
+    static addProduct(prodID, quantity=1) {
         let products = [];
-        if (this.getItem(this.key)) {
-            products = getItem(this.key);
+        if (CardManager.getItem(CardManager.key)) {
+            products = CardManager.getItem(CardManager.key);
+            if (CardManager.isItInCart(prodID)) {
+                let prevQty = null;
+                products.forEach(p => {
+                    if (p.productID == prodID) { prevQty = p.quantity }
+                });
+                quantity += prevQty;
+            }
         };
-        products.pushProductToArray({ 'productID': prodID, 'quantity': quantity }, products);
-        this.setItem([products]);
+        CardManager.pushProductToArray({ 'productID': prodID, quantity }, products);
+        CardManager.setItem(products);
     }
 
     //checks if item is already in cart
@@ -17,9 +24,9 @@ class CardManager {
         let flag = false;
         const products = this.getItem(this.key);
         products.forEach(p => {
-            if (p == prodID) { flag = true }
-            return flag;
+            if (p.productID == prodID) { flag = true }
         });
+        return flag;
     }
 
     //verify if a product is in cart and pushes it if it isn't
@@ -58,3 +65,5 @@ class CardManager {
     }
 
 }
+
+export default CardManager;
