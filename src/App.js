@@ -9,6 +9,8 @@ import {
   Route
 } from "react-router-dom";
 import SearchPage from './pages/SearchPage';
+import Section from './pages/Section';
+import PageDetail from './pages/Pagedetail';
 
 function App() {
   return (
@@ -17,9 +19,9 @@ function App() {
       <Nabvar />
       <Switch>
         <Route exact path="/" component={HomePage} />
-        <Route path="/search" component={SearchPage} />
-        <Route path="/pagedetail/:id" component={PageDetail} />
-        <Route path="/Cart" component={Cart} />
+        <Route exact path="/section/:category" component={Section} />
+        <Route exact path="/pagedetail/:id" component={PageDetail} />
+        <Route exact path="/Cart" component={Cart} />
       </Switch>
       <Footer />
     </div>
