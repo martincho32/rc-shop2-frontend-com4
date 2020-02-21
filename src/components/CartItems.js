@@ -1,12 +1,24 @@
 import React from 'react';
 import ShowDiscount from '../utilities/ShowDiscount'
 import { Link } from 'react-router-dom';
-import '../components/CartItems.css'
+import '../components/CartItems.css';
 import CardManager from '../utilities/CardManager';
+import { useState } from 'react';
 
 export default function CartItems(props) {
 
-    
+    const [inputValue, setinputValue] = useState(CardManager.getQuantityById(props._id));
+
+    const onChangeHandler = (e) => {
+        let value = parseInt(e.target.value);
+        if(value <= 0) {
+            value = 1
+        }
+        setinputValue(value)
+            CardManager.setProductQuantity(props._id, value);
+    }
+
+
     return (
         < div className="row border-bottom border-danger align-items-center" >
                 <div className="col">
@@ -16,7 +28,7 @@ export default function CartItems(props) {
                     <p>{props.brand + " - " + props.model}</p>
                 </div>
                 <div className="col">
-                    <input className="form-control" type="number" />
+                    <input className="form-control" type="number" onChange={ onChangeHandler } value={ inputValue } />
                 </div>
                 <div className="col">
                     {ShowDiscount(props)}
