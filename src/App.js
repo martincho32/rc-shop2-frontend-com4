@@ -19,6 +19,7 @@ function App() {
       <Switch>
         <Route path="/search" component={SearchPage} />
         <Route exact path="/" component={HomePage} />
+        <Route exact path="/section/:category" component={Section} />
         <Route exact path="/pagedetail/:id" component={PageDetail} />
         <Route exact path="/Cart" component={Cart} />
       </Switch>
