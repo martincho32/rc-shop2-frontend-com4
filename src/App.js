@@ -9,6 +9,8 @@ import {
   Route
 } from "react-router-dom";
 import SearchPage from './pages/SearchPage';
+import Section from './pages/Section';
+import PageDetail from './pages/Pagedetail';
 
 function App() {
   return (
