@@ -5,8 +5,6 @@ import { useLocation } from 'react-router-dom';
 
 export default function SearchPage(props) {
     const [dbProducts, setDbProducts] = useState();
-    const location = useLocation();
-    console.log(location);
 
     //Hook version of componentDidMount()
     useEffect(() => {

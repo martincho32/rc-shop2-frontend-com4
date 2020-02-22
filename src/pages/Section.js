@@ -1,11 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import Axios from 'axios';
 import Cards from '../components/Cards';
-import { useLocation } from 'react-router-dom';
 
 export default function Section(props) {
     const [dbProducts, setDbProducts] = useState();
-    const location = useLocation();
     
 
     //Hook version of componentDidMount()
