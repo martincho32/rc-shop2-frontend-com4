@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import Axios from 'axios';
-import Cards from './Cards';
+import Cards from '../components/Cards';
 import { useLocation } from 'react-router-dom';
 
 export default function SearchPage(props) {
@@ -27,7 +27,6 @@ export default function SearchPage(props) {
     let productsWithMap = [];
 
     //checks if its not null or undefined
-    // console.log(products);
     if (products) {
         productsWithMap = products.map(p => <Cards key={p._id} {...p} />)
     }
