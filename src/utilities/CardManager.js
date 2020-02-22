@@ -10,7 +10,7 @@ class CardManager {
             if (CardManager.isItInCart(prodID)) {
                 let prevQty = null;
                 products.forEach(p => {
-                    if (p.productID == prodID) { prevQty = p.quantity }
+                    if (p.productID === prodID) { prevQty = p.quantity }
                 });
                 quantity += prevQty;
             }
@@ -36,7 +36,7 @@ class CardManager {
         let flag = false;
         const products = CardManager.getItem(CardManager.key);
         products.forEach(p => {
-            if (p.productID == prodID) { flag = true }
+            if (p.productID === prodID) { flag = true }
         });
         return flag;
     }

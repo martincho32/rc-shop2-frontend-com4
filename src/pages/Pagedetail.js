@@ -113,7 +113,7 @@ class PageDetail extends React.Component {
                                 <p className="text-muted">Precio financiado: $ {this.calculateFee18() * 18} - CFT 35.54% - TEA 45.54%</p>
                             </div>
                         </div>
-                        <div className="row border pl-3 border-top-0"><a href="#">Ver cuotas y medios de pago <i className="fas fa-chevron-right fa-sm"></i></a></div>
+                        <div className="row border pl-3 border-top-0"><a href="#top">Ver cuotas y medios de pago <i className="fas fa-chevron-right fa-sm"></i></a></div>
                         <div className="row mt-4 border">
                             <div className="col-3"><i className="fas fa-truck fa-3x mt-3"></i></div>
                             <div className="col-9 pb-2">
