@@ -1,11 +1,5 @@
 import React from 'react';
 import ShowDiscount from '../utilities/ShowDiscount'
-<<<<<<< HEAD
-import '../components/CartItems.css'
-
-export default function CartItems(props) {
-
-=======
 import { Link } from 'react-router-dom';
 import '../components/CartItems.css';
 import CardManager from '../utilities/CardManager';
@@ -25,7 +19,6 @@ export default function CartItems(props) {
     }
 
 
->>>>>>> 7255b1757dd5f254eaaa5961a6159d0d749ca89e
     return (
         < div className="row border-bottom border-danger align-items-center" >
                 <div className="col">
