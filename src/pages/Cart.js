@@ -5,7 +5,7 @@ import React, {
 import { useHistory } from 'react-router-dom';
 import Axios from 'axios';
 import CartItems from '../components/CartItems';
-import CardManager from '../utilities/CardManager';
+import CardManager from '../utilities/CartManager';
 
 
 export default function Cart() {

@@ -1,4 +1,4 @@
-class CardManager {
+class CartManager {
 
     static key = "cartItems"
 

@@ -2,7 +2,7 @@ import React from 'react';
 import ShowDiscount from '../utilities/ShowDiscount'
 import { Link } from 'react-router-dom';
 import '../components/CartItems.css';
-import CardManager from '../utilities/CardManager';
+import CardManager from '../utilities/CartManager';
 import { useState } from 'react';
 
 export default function CartItems(props) {
