@@ -28,7 +28,6 @@ class CardManager {
     static getQuantityById = (id) => {
         const items = CardManager.getItem();
         const found = items.find(item => item.productID === id);
-        console.log(id);
         return found.quantity
     };
 
@@ -76,7 +75,6 @@ class CardManager {
     static clearCart() {
         localStorage.removeItem(CardManager.key);
     }
-
 }
 
 export default CardManager;

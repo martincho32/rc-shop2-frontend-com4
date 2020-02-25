@@ -6,10 +6,14 @@ import { useHistory } from 'react-router-dom';
 import Axios from 'axios';
 import CartItems from '../components/CartItems';
 import CardManager from '../utilities/CardManager';
+import Modal from '../components/Modal';
 
 
 export default function Cart() {
 	const [dbProducts, setDbProducts] = useState([]);
+	const [activeSpinner, setActiveSpinner] = useState(false);
+	const [random, setRandom] = useState();
+	const [showModal, setShowModal] = useState(false);
 	const history = useHistory();
 	let mappedItems = [];
 
@@ -58,6 +62,21 @@ export default function Cart() {
 	// 		</div>
 	// 	);
 	// };
+	const getRnd = (min, max) => {
+		return Math.floor(Math.random() * (max - min + 1) ) + min;
+	}
+
+	const finishPurchaseHandler = () => {
+		setActiveSpinner(true);
+		let rand = getRnd(0, 1);
+		setTimeout(() => {
+			setActiveSpinner(false);
+			setRandom(rand);
+			setShowModal(true);
+			setShowModal(false);
+		}, 3000);
+		
+	}
 
 
 	return (
@@ -69,12 +88,19 @@ export default function Cart() {
 				<div className="container border border-bottom-0">
 					{mappedItems}
 				</div>
+				<div className={activeSpinner?"text-center mt-4 d-block":"text-center mt-4 d-none"}>
+					<div className="spinner-grow mt-4" role="status">
+						<span className="sr-only">Loading...</span>
+					</div>
+					<p className="mt-2"> &nbsp;&nbsp; Loading...</p>
+				</div>
 				<div className="row mt-3 justify-content-end">
 					<button className="btn btn-primary p-2 mx-2" onClick={() => history.push('/')}>Seguir Comprando</button>
 					<button className="btn btn-secondary p-2 mx-2" onClick={clearCartOnClickHandler}>Limpiar Carrito</button>
-					<button className="btn btn-success p-2 mx-2">Finalizar Compra</button>
+					<button onClick={ finishPurchaseHandler } className="btn btn-success p-2 mx-2">Finalizar Compra</button>
 				</div>
 			</div>
+			<Modal random={ random } showModal={ showModal }/>
 		</>
 	);
 }
