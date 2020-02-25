@@ -1,13 +1,12 @@
 import React from 'react';
 import ShowDiscount from '../utilities/ShowDiscount'
-import { Link } from 'react-router-dom';
 import '../components/CartItems.css';
-import CardManager from '../utilities/CartManager';
+import CartManager from '../utilities/CartManager';
 import { useState } from 'react';
 
 export default function CartItems(props) {
 
-    const [inputValue, setinputValue] = useState(CardManager.getQuantityById(props._id));
+    const [inputValue, setinputValue] = useState(CartManager.getQuantityById(props._id));
 
     const onChangeHandler = (e) => {
         let value = parseInt(e.target.value);
@@ -15,7 +14,7 @@ export default function CartItems(props) {
             value = 1
         }
         setinputValue(value)
-            CardManager.setProductQuantity(props._id, value);
+            CartManager.setProductQuantity(props._id, value);
     }
 
 

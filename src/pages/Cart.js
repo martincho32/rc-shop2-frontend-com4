@@ -5,7 +5,7 @@ import React, {
 import { useHistory } from 'react-router-dom';
 import Axios from 'axios';
 import CartItems from '../components/CartItems';
-import CardManager from '../utilities/CartManager';
+import CartManager from '../utilities/CartManager';
 
 
 export default function Cart() {
@@ -18,7 +18,7 @@ export default function Cart() {
 	}, []);
 
 	async function getProducts() {
-		let itemsInLocalStorage = CardManager.getItem();
+		let itemsInLocalStorage = CartManager.getItem();
 		const products = [];
 		try {
 			for (const item of itemsInLocalStorage) {
@@ -32,12 +32,12 @@ export default function Cart() {
 	}
 
 	const clearCartOnClickHandler = () => {
-		CardManager.clearCart();
+		CartManager.clearCart();
 		setDbProducts();
 	}
 
 	const removeItem = (p) => {
-		CardManager.removeProduct(p);
+		CartManager.removeProduct(p);
 		const productosActualizados = [];
 		for (const i of dbProducts) {
 			if (i._id !== p) {
