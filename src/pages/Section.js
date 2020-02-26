@@ -5,7 +5,7 @@ import Cards from '../components/Cards';
 
 export default function Section(props) {
     const [dbProducts, setDbProducts] = useState();
-
+    
     useEffect(() => {
 
         async function getProducts() {

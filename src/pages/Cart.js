@@ -84,7 +84,6 @@ export default function Cart() {
 		}, 3000);
 	}
 
-
 	return (
 		<>
 			<div className="container">
@@ -100,13 +99,19 @@ export default function Cart() {
 					</div>
 					<p className="mt-2"> &nbsp;&nbsp; Loading...</p>
 				</div>
+				<div className={activeSpinner?"text-center mt-4 d-block":"text-center mt-4 d-none"}>
+					<div className="spinner-grow mt-4" role="status">
+						<span className="sr-only">Loading...</span>
+					</div>
+					<p className="mt-2"> &nbsp;&nbsp; Loading...</p>
+				</div>
 				<div className="row mt-3 justify-content-end">
 					<button className="btn btn-primary p-2  mx-2" onClick={() => history.push('/')}>Seguir Comprando</button>
 					<button className="btn btn-secondary p-2 mx-2" onClick={clearCartOnClickHandler}>Limpiar Carrito</button>
 					<button onClick={finishPurchaseHandler} className="btn btn-success p-2 mx-2">Finalizar Compra</button>
 				</div>
 			</div>
-			<Modal random={random} showModal={showModal} />
+			<Modal random={ random } showModal={ showModal }/>
 		</>
 	);
 }
