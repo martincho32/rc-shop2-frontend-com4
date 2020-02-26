@@ -24,7 +24,6 @@ export default function Email() {
 			}
 		}
 		else {
-			console.log('email invalido')
 			input.classList.add('error');
 		}
 	}

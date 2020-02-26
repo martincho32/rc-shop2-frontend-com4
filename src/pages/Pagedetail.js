@@ -1,6 +1,6 @@
 import React from 'react';
 import Axios from 'axios';
-import CardManager from '../utilities/CardManager';
+import CartManager from '../utilities/CartManager';
 
 
 class PageDetail extends React.Component {
@@ -21,9 +21,7 @@ class PageDetail extends React.Component {
 
     onClickHandler = () => {
     
-        let products = CardManager.getItem();
-        console.log(products);
-        CardManager.addProduct(this.state.product._id);
+        CartManager.addProduct(this.state.product._id);
         this.props.history.push('/Cart');
     }
 
