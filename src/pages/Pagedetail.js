@@ -1,6 +1,6 @@
 import React from 'react';
 import Axios from 'axios';
-import CardManager from '../utilities/CardManager';
+import CartManager from '../utilities/CartManager';
 
 
 class PageDetail extends React.Component {
@@ -21,15 +21,13 @@ class PageDetail extends React.Component {
 
     onClickHandler = () => {
     
-        let products = CardManager.getItem();
-        console.log(products);
-        CardManager.addProduct(this.state.product._id);
+        CartManager.addProduct(this.state.product._id);
         this.props.history.push('/Cart');
     }
 
 
     discountPrice = () => {
-        if(this.state.product.discountPercentage >= 0) {
+        if(this.state.product.discountPercentage > 0) {
             let newPrice = this.state.product.price - (this.state.product.price * this.state.product.discountPercentage) / 100
             return (
                 <div>
@@ -39,7 +37,7 @@ class PageDetail extends React.Component {
             );
         } else {
             return (
-                <h3 className="text-danger text-center">${this.state.product.price}</h3>
+                <h3 className="text-center">${this.state.product.price}</h3>
             );
         }
     };        
@@ -49,7 +47,7 @@ class PageDetail extends React.Component {
         if(this.state.product.discountPercentage >= 0) {
             let newPrice = this.state.product.price - (this.state.product.price * this.state.product.discountPercentage) / 100
             return (
-                ((newPrice * 0.25) + newPrice)  / 12
+                parseFloat((((newPrice * 0.25) + newPrice)  / 12).toFixed(2))
             );
         } else {
             return (
@@ -63,7 +61,7 @@ class PageDetail extends React.Component {
         if(this.state.product.discountPercentage >= 0) {
             let newPrice = this.state.product.price - (this.state.product.price * this.state.product.discountPercentage) / 100
             return (
-                ((newPrice * 0.45) + newPrice)  / 18
+                parseFloat((((newPrice * 0.45) + newPrice)  / 18).toFixed(2))
             );
         } else {
             return (
@@ -113,7 +111,7 @@ class PageDetail extends React.Component {
                                 <p className="text-muted">Precio financiado: $ {this.calculateFee18() * 18} - CFT 35.54% - TEA 45.54%</p>
                             </div>
                         </div>
-                        <div className="row border pl-3 border-top-0"><a href="#">Ver cuotas y medios de pago <i className="fas fa-chevron-right fa-sm"></i></a></div>
+                        <div className="row border pl-3 border-top-0"><a href="#top">Ver cuotas y medios de pago <i className="fas fa-chevron-right fa-sm"></i></a></div>
                         <div className="row mt-4 border">
                             <div className="col-3"><i className="fas fa-truck fa-3x mt-3"></i></div>
                             <div className="col-9 pb-2">
