@@ -1,13 +1,13 @@
-class CardManager {
+class CartManager {
 
     static key = "cartItems"
 
     //Add one or more items to local storage
     static addProduct(prodID, quantity=1) {
         let products = [];
-        if (CardManager.getItem(CardManager.key)) {
-            products = CardManager.getItem(CardManager.key);
-            if (CardManager.isItInCart(prodID)) {
+        if (CartManager.getItem(CartManager.key)) {
+            products = CartManager.getItem(CartManager.key);
+            if (CartManager.isItInCart(prodID)) {
                 let prevQty = null;
                 products.forEach(p => {
                     if (p.productID === prodID) { prevQty = p.quantity }
@@ -15,18 +15,18 @@ class CardManager {
                 quantity += prevQty;
             }
         };
-        CardManager.pushProductToArray({ 'productID': prodID, quantity }, products);
-        CardManager.setItem(products);
+        CartManager.pushProductToArray({ 'productID': prodID, quantity }, products);
+        CartManager.setItem(products);
     }
 
     static setProductQuantity = (prodID, quantity) => {
-        const products = CardManager.getItem();
-        CardManager.pushProductToArray({ 'productID': prodID, quantity }, products);
-        CardManager.setItem(products);
+        const products = CartManager.getItem();
+        CartManager.pushProductToArray({ 'productID': prodID, quantity }, products);
+        CartManager.setItem(products);
     }
 
     static getQuantityById = (id) => {
-        const items = CardManager.getItem();
+        const items = CartManager.getItem();
         const found = items.find(item => item.productID === id);
         return found.quantity
     };
@@ -34,7 +34,7 @@ class CardManager {
     //checks if item is already in cart
     static isItInCart(prodID) {
         let flag = false;
-        const products = CardManager.getItem(CardManager.key);
+        const products = CartManager.getItem(CartManager.key);
         products.forEach(p => {
             if (p.productID === prodID) { flag = true }
         });
@@ -54,27 +54,27 @@ class CardManager {
 
     //remove a specific item from local storage
     static removeProduct(prodID) {
-        let storageProducts = CardManager.getItem(CardManager.key);
+        let storageProducts = CartManager.getItem(CartManager.key);
         let products = storageProducts.filter(p => p.productID !== prodID);
-        CardManager.setItem(products);
+        CartManager.setItem(products);
     }
 
     //get local storage items
     static getItem() {
-        let item = JSON.parse(localStorage.getItem(CardManager.key));
+        let item = JSON.parse(localStorage.getItem(CartManager.key));
         return item;
     }
 
     //set local storage items
     static setItem(value) {
         let item = JSON.stringify(value);
-        localStorage.setItem(CardManager.key, item);
+        localStorage.setItem(CartManager.key, item);
     }
 
     //clears local storage
     static clearCart() {
-        localStorage.removeItem(CardManager.key);
+        localStorage.removeItem(CartManager.key);
     }
 }
 
-export default CardManager;
+export default CartManager;

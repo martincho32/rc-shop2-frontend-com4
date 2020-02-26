@@ -1,7 +1,7 @@
 import React, { useRef,useEffect } from 'react';
 import $ from 'jquery';
 import { useHistory } from 'react-router-dom';
-import CardManager from '../utilities/CardManager';
+import CartManager from '../utilities/CartManager';
 
 
 function Modal(props) {
@@ -30,13 +30,13 @@ function Modal(props) {
     const onClickHandler = () => {
         if (props.random === 1) {
             history.push('/');
-            CardManager.clearCart();
+            CartManager.clearCart();
         }
     };
 
     return(
         // Modal
-        <div data-show="true" ref={ refModal } className="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div data-show="true" ref={ refModal } className="modal fade" id="exampleModal" tabIndex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div className="modal-dialog" role="document">
                 <div className="modal-content">
                     <div className="modal-header">

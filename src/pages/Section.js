@@ -1,17 +1,16 @@
 import React, { useEffect, useState } from 'react';
+import Carrousel from '../components/Carrousel';
 import Axios from 'axios';
 import Cards from '../components/Cards';
 
 export default function Section(props) {
     const [dbProducts, setDbProducts] = useState();
     
-
-    //Hook version of componentDidMount()
     useEffect(() => {
+
         async function getProducts() {
             try {
                 const res = await Axios.get(`/api/products/search?category=${props.match.params.category}`);
-                // console.log(props.location.query)
                 setDbProducts(res.data)
             } catch (e) {
                 console.error(e);
@@ -19,23 +18,25 @@ export default function Section(props) {
         }
 
         getProducts();
-    }, [props.location.search]);
+    }, [props.match.params.category]);
 
-    const products = dbProducts;
-    let productsWithMap = [];
 
-    //checks if its not null or undefined
-    // console.log(products);
-    if (products) {
-        productsWithMap = products.map(p => <Cards key={p._id} {...p} />)
+
+    function renderSection() {
+        let productsWithMap = [];
+
+        if (dbProducts) {
+            productsWithMap = dbProducts.map(p => <Cards key={p._id} {...p} />)
+        }
+        return productsWithMap;
     }
 
     return (
         <>
+            <Carrousel />
             <div className="container d-flex flex-wrap">
-                {productsWithMap}
+                {renderSection()}
             </div>
         </>
     );
 }
- 
