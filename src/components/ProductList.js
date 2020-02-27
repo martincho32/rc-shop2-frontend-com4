@@ -30,7 +30,7 @@ export default function ProductList() {
 
     return (
         <>
-            <div className="container d-flex flex-wrap p-2">
+            <div className="container d-flex flex-wrap p-2 mt-4">
                 {productsWithMap}
             </div>
         </>
