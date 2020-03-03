@@ -50,6 +50,8 @@ npm install
 * [Bootstrap](https://getbootstrap.com/docs/4.4/getting-started/introduction/)
 * [Axios](https://www.npmjs.com/package/axios)
 * [Nodemon](https://nodemon.io/)
+* [SendGrid](https://sendgrid.com/)
+* [Cors](https://www.npmjs.com/package/cors)
 
 
 ## Authors
