@@ -43,12 +43,13 @@ npm install
 
 * [MongoDB](https://www.mongodb.com/download-center/community)
 * [Express](https://expressjs.com/en/starter/installing.html)
-* [React](https://reactjs.org/) - Dependency Management
+* [React](https://reactjs.org/)
 * [Node.js](https://nodejs.org/en/download/)
 
 * [Create-React-App](https://www.npmjs.com/package/create-react-app)
 * [Bootstrap](https://getbootstrap.com/docs/4.4/getting-started/introduction/)
 * [Axios](https://www.npmjs.com/package/axios)
+* [Nodemon](https://nodemon.io/)
 
 
 ## Authors
