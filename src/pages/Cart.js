@@ -93,12 +93,6 @@ export default function Cart() {
 				<div className="container border border-bottom-0">
 					{isCartEmpty()}
 				</div>
-				<div className={activeSpinner ? "text-center mt-4 d-block" : "text-center mt-4 d-none"}>
-					<div className="spinner-grow mt-4" role="status">
-						<span className="sr-only">Loading...</span>
-					</div>
-					<p className="mt-2"> &nbsp;&nbsp; Loading...</p>
-				</div>
 				<div className={activeSpinner?"text-center mt-4 d-block":"text-center mt-4 d-none"}>
 					<div className="spinner-grow mt-4" role="status">
 						<span className="sr-only">Loading...</span>
