@@ -3,6 +3,7 @@ import ShowDiscount from '../utilities/ShowDiscount'
 import '../components/CartItems.css';
 import CartManager from '../utilities/CartManager';
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 export default function CartItems(props) {
 
