@@ -20,7 +20,6 @@ class PageDetail extends React.Component {
 
 
     onClickHandler = () => {
-    
         CartManager.addProduct(this.state.product._id);
         this.props.history.push('/Cart');
     }
