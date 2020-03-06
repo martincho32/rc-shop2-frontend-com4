@@ -3,6 +3,7 @@ import { Button, Form, FormGroup, Label, Input } from 'reactstrap';
 import { FacebookLoginButton, TwitterLoginButton, InstagramLoginButton } from 'react-social-login-buttons';
 import { Link } from 'react-router-dom';
 import Axios from 'axios';
+import swal from 'sweetalert';
 
 
 class Register extends React.Component {
@@ -10,15 +11,15 @@ class Register extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            fullName:"", 
+            name:"", 
             email: "",
             password: "" 
         };
       }
 
       onChangeFullNameHandler = (e) => {
-        const fullName = e.target.value;
-        this.setState({ fullName })
+        const name = e.target.value;
+        this.setState({ name })
       }
 
       onChangeEmailHandler = (e) => {
@@ -34,9 +35,14 @@ class Register extends React.Component {
 
     onSubmitHandler = async (e) => {
        e.preventDefault();
-       console.log('hello friend')
-        const user = await Axios.post('api/user/register', this.state);
-        console.log(user);
+        const res = await Axios.post('api/user/register', this.state);
+        if(res.data.user) {
+            swal('Usuario creado con éxito', "Inicia sesión para completar el proceso", "success");
+            this.props.history.push(`/login`);
+        } else {
+            swal(res.data)
+            this.props.history.push(`/login`);
+        };
     }
 
 
@@ -64,7 +70,7 @@ class Register extends React.Component {
                             <Label>Password</Label>
                             <Input onChange={ this.onChangePassHandler } type="password" placeholder="Password" />
                         </FormGroup>
-                        <Button className="btn-lg btn-dark btn-block">Log in</Button>
+                        <Button type="submit" className="btn-lg btn-dark btn-block">Log in</Button>
                     </div>
                     <div className="ml-3 mt-3">
                         <div className="text-center pt-3">

@@ -67,6 +67,20 @@ class Navbar extends React.Component {
                                     </div>
                                 </li>
                             </ul>
+                            <div className="mr-3 d-flex">
+                                <div className="mx-2">                                    
+                                    <Link to="/register" className="font-weight-bold ml-1">
+                                        <i className="fas fa-user-plus mr-1"></i>
+                                        Sign up
+                                    </Link>
+                                </div>
+                                <div className="mx-2">                                    
+                                    <Link to="/login" className="font-weight-bold ml-2">
+                                        <i className="fas fa-sign-in-alt mr-1"></i>
+                                        Login
+                                    </Link>
+                                </div>
+                            </div>
                             <form className="form-inline my-2 my-lg-0">
                                 <input onChange={(e) => this.setState({ inputValue: e.target.value })} value={this.state.inputValue} className="form-control mr-sm-2" type="search" name="brand" placeholder="Search" aria-label="Search" />
                                 <button className="btn btn-outline-success my-2 my-sm-0" onClick={this.onClickHandler} type="submit">Search</button>
