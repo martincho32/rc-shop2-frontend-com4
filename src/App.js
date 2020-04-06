@@ -4,6 +4,8 @@ import Nabvar from './components/Nabvar';
 import Footer from './components/Footer';
 import HomePage from './pages/HomePage';
 import Cart from './pages/Cart';
+import Login from './pages/LogIn';
+import Register from './pages/Register';
 import {
   Switch,
   Route
@@ -12,12 +14,15 @@ import SearchPage from './pages/SearchPage';
 import Section from './pages/Section';
 import PageDetail from './pages/Pagedetail';
 
+
 function App() {
   return (
     <div>
 
       <Nabvar />
       <Switch>
+      <Route exact path="/register" component={Register} />
+        <Route exact path="/login" component={Login} />
         <Route exact path="/" component={HomePage} />
         <Route exact path="/search" component={SearchPage} />
         <Route exact path="/section/:category" component={Section} />
